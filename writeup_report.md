@@ -1,5 +1,5 @@
 [![Advanced Lane Detection & Tracking - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
-## Dean Webb - Behavioral Cloning Pipeline
+## Dean Webb - Advanced Lane Detection Pipeline
 #### Self-Driving Car Engineer Nanodegee - Project 4
 In this project, our goal is to write a software pipeline to identify the lane boundaries in an input video. An example summary of all techniques applied to a test image can be seen below for reference:
 
