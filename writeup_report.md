@@ -1,4 +1,4 @@
- [![Advanced Lane Detection & Tracking - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+[![Advanced Lane Detection & Tracking - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 ## Dean Webb - Advanced Lane Detection & Tracking Pipeline
 #### Self-Driving Car Engineer Nanodegee - Project 4
 In this project, our goal is to write a software pipeline to identify the lane boundaries in an input video. An example summary of all techniques applied to a test image can be seen below for reference:
@@ -187,7 +187,7 @@ As noted above, I implemented this step in the `pipeline()` and `process_image()
 
 #### 1. <font color='green'>Provide a link to your final video output.</font>  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](https://youtu.be/JPLXtYu2D6M)
+Here's a [link to my video result](https://youtu.be/wmLn4muEI7k)
 
 ---
 
