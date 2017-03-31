@@ -1,7 +1,11 @@
-[![Advanced Lane Detection & Tracking - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
-## Dean Webb - Advanced Lane Detection Pipeline
+ [![Advanced Lane Detection & Tracking - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+## Dean Webb - Advanced Lane Detection & Tracking Pipeline
 #### Self-Driving Car Engineer Nanodegee - Project 4
 In this project, our goal is to write a software pipeline to identify the lane boundaries in an input video. An example summary of all techniques applied to a test image can be seen below for reference:
+
+---
+
+![alt text][image21]
 
 ---
 
@@ -40,7 +44,7 @@ The `challenge_video.mp4` video is an extra (and optional) challenge for you if 
 [image2]: https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/test_images/test1.jpg "Test Image Input"
 [image4]: https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/examples/out/apply_perspective_transform.jpg "Perspective Transform Function Snippet"
 [image5]: https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/output_images/green_lines5.jpg "Fit Visual (With Green Lines)"
-[image6]: https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/examples/out/radius_curvature_output.jpg "Radius Curvature Output"
+[image6]: https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/examples/out/example_processed_output.jpg "Radius Curvature Output"
 [image7]: https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/processed_project_video.mp4 "Processed Project Video"
 [image9]: https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/output_images/undistorted0.jpg "Test Image Input"
 [image10]: https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/examples/out/curvature_snippet.jpg "Radius of Curvature Code Snippet"
@@ -54,6 +58,7 @@ The `challenge_video.mp4` video is an extra (and optional) challenge for you if 
 [image18]: https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/output_images/warped2.jpg "Warped 2"
 [image19]: https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/examples/out/inverted_warped_transform.jpg "Inverted Mask Warped 2"
 [image20]: https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/examples/out/histogram_analysis.jpg "Histogram Analysis Function"
+[image21]: https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/examples/out/overview_processed.jpg "Overview Lane-Tracking Processed"
 
 
 
@@ -182,7 +187,7 @@ As noted above, I implemented this step in the `pipeline()` and `process_image()
 
 #### 1. <font color='green'>Provide a link to your final video output.</font>  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](https://s3-us-west-1.amazonaws.com/sdc-gpu/p4_data/processed_project_video.mp4)
+Here's a [link to my video result](https://youtu.be/JPLXtYu2D6M)
 
 ---
 
@@ -204,7 +209,7 @@ Another issue was that originally I used a Histogram to try and detect the polyn
 
 Since I implemented. By far the best strategy I used was the `pipeline()` function, as it goes through and applies all of the required transformations and then saves the images into a directory. This strategy allowed my to slowly develop and to "fail fast." That is, I was able to recognize bugs in the code or mistakes in my logic by simply looking at the output image each step. I initially tried to implement the vehicle detection tracking project without this intermediary process of plotting and saving example images. I believe this will help me further limit the false positives that have been plaguing my results (and delaying my submission).
 
-I am satisfied with my lane line detection accuracy but I definitely believe I could spend a great deal more time on the project perfecting that. I would like to investigate some techniques that might allow me to plot lanes for **very sharp turns** I quickly released after testing with the `harder_challenge.mp4` video that there are many improvements to be made to the algorithm I used. I noticed many scenarios that easily broke my lane detection algorithms, such as the road changing color. I believe the investigation is in order to look into optimizing may lane-detection algorithm. I am pretty motivated to complete this **sooner rather than later**, since I plan to participate in the [Didi and Udacity Self Driving Car Challenge](https://www.udacity.com/didi-challenge)!
+I am satisfied with my lane line detection accuracy but I definitely believe I could spend a great deal more time on the project perfecting that. I would like to investigate some techniques that might allow me to plot lanes for **very sharp turns** I quickly realized after testing with the `harder_challenge.mp4` video that there are many improvements to be made to the algorithm I used. I noticed many scenarios that easily broke my lane detection algorithms, such as the road changing color. To fix this, I would process a subclip of the video, and rocess and print each frame to see what the algorithm was doing. In one such instance,  noticed the algorithm picking up the right lane car's wheel whenever the dashed-right lane line was missing. This allowed me to appropriately remove the false positives and complete detection on pretty much all of the frames. I believe a further investigation is in order to look into optimizing may lane-detection algorithm. I am pretty motivated to complete this **sooner rather than later**, since I plan to participate in the [Didi and Udacity Self Driving Car Challenge](https://www.udacity.com/didi-challenge)!
 
 One more optimization I think would be great is if I could design the code to obviously run faster. I was more concerned with accuracy than speed for this project. Now that things are fairly accurate, I would investigate how to get it to process faster than the single-image-per-second threshold.
 
